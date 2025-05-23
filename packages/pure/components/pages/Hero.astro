@@ -7,7 +7,6 @@ import { FormattedDate, Icon } from '../user'
 
 interface Props {
   data: InferEntrySchema<'blog'>
-  remarkPluginFrontmatter: Record<string, unknown>
 }
 
 const {
@@ -19,10 +18,8 @@ const {
     publishDate,
     updatedDate,
     comment: enableComment,
-    tags,
-    language
-  },
-  remarkPluginFrontmatter
+    tags
+  }
 } = Astro.props
 
 const dateTimeOptions: Intl.DateTimeFormatOptions = {
@@ -76,20 +73,6 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
         )
       }
     </div>
-    {/* Times read */}
-    <div class='flex items-center gap-1'>
-      <Icon name='time' class='size-5' />
-      {remarkPluginFrontmatter.minutesRead}
-    </div>
-    {
-      // Language
-      language && (
-        <span class='flex items-center gap-1'>
-          <Icon name='earth' class='size-5' />
-          {language}
-        </span>
-      )
-    }
     {
       // Tags
       !!tags?.length && (
