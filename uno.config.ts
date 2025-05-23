@@ -110,6 +110,25 @@ const typographyConfig = {
     a: {
       'font-weight': '500',
       color: fg
+    },
+    // Inline code
+    ':not(pre) > code': {
+      'background-color': bgMuted,
+      color: fg,
+      padding: '0.2em 0.4em',
+      'margin-left': '0.2em',
+      'margin-right': '0.2em',
+      'border-radius': '0.25rem',
+      'font-size': '0.8em',
+      'word-wrap': 'break-word',
+      'vertical-align': 'text-top',
+      'font-weight': '300'
+    },
+    ':not(pre) > code::before': {
+      content: 'none'
+    },
+    ':not(pre) > code::after': {
+      content: 'none'
     }
   }
 }
