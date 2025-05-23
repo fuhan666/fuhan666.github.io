@@ -7,93 +7,74 @@ import ProjectSection from '@/components/projects/ProjectSection.astro'
 import config from '@/site-config'
 
 const headings = [
-  { depth: 2, slug: 'programs', text: 'Programs' },
-  { depth: 2, slug: 'learnings', text: 'Learnings' },
-  { depth: 2, slug: 'others', text: 'Others' },
+  { depth: 2, slug: 'Open Source', text: '开源项目' },
+  { depth: 2, slug: 'Company', text: '公司项目' }
 ]
 ---
 
-<PageLayout title='Projects' {headings} info={{ slug: '/projects', hideComment: true }}>
-  <h2 id='programs'>Programs</h2>
+<PageLayout title='项目' {headings} info={{ slug: '/projects', hideComment: true }}>
+  <h2 id='Open Source'>开源项目</h2>
   <ProjectSection
     project={[
       {
-        name: '🤖 Arknights Telegram Bot',
-        description: 'Telegram Bot for Arknights',
+        name: 'excel-cli',
+        description:
+          '一个运行在终端中的轻量级 Excel 查看器，具有类 Vim 导航功能，用于查看、编辑 Excel 数据并导出为 JSON 格式。',
         links: [
-          { type: 'github', href: 'https://github.com/IJNKAWAKAZE/arknights_bot' },
-          { type: 'site', href: 'https://t.me/PtiIopsis_bot' },
+          { type: 'github', href: 'https://github.com/fuhan666/excel-cli' },
+          { type: 'site', href: 'https://crates.io/crates/excel-cli' }
+        ]
+      },
+      {
+        name: 'maimemo-sdk',
+        description: '墨墨背单词开放 API 的非官方 SDK',
+        links: [
+          { type: 'github', href: 'https://github.com/fuhan666/maimemo-sdk' },
           {
-            type: 'doc',
-            href: 'https://github.com/IJNKAWAKAZE/arknights_bot/blob/main/docs/Development.md'
+            type: 'site',
+            href: 'https://www.npmjs.com/package/maimemo'
           }
         ]
       },
       {
-        name: '💄 PKU Art',
-        description: 'A script to beautify pku course website',
+        name: 'cookie-to-json-plugin',
+        description:
+          'uTools 插件，将 Cookie 字符串转换为 JSON 格式，方便开发者进行调试和数据处理。',
         links: [
-          { type: 'github', href: 'https://github.com/zhuozhiyongde/pku-art' },
-          { type: 'site', href: 'https://github.com/zhuozhiyongde/pku-art' },
-          { type: 'doc', href: 'https://docs.arthals.ink/docs/pku-art' }
+          { type: 'github', href: 'https://github.com/fuhan666/cookie-to-json-plugin' },
+          {
+            type: 'site',
+            href: 'https://u.tools/plugins/detail/Cookie+%E8%BD%AC+JSON/?c=xjzydwwpwa'
+          }
         ]
       }
     ]}
   />
-  <Collapse title='Some old projects'>
+  <Collapse title='开发中的项目'>
     <ProjectSection
       project={[
         {
-          name: 'Search Switcher',
-          description: 'Add links to each other in search engines',
-          links: [{ type: 'github', href: 'https://github.com/cworld1/search-switcher' }]
-        },
-        {
-          name: 'Pure Baidu',
-          description: 'Baidu search page beautification module',
-          links: [
-            { type: 'doc', href: 'https://cworld0.com/blog/pure-baidu' },
-            { type: 'site', href: 'https://userstyles.org/styles/173673/pure' }
-          ]
+          name: 'Quizy',
+          description: 'NestJS 实现的后端模板项目',
+          links: [{ type: 'github', href: 'https://github.com/fuhan666/Quizy' }]
         }
       ]}
     />
   </Collapse>
 
-  <h2 id='learnings'>Learnings</h2>
+  <h2 id='Company'>公司项目</h2>
   <ProjectSection
     class='my-2'
     project={[
       {
-        name: 'Rust Learning',
-        description: 'Some notes and code about CWorld learning Rust',
-        links: [{ type: 'github', href: 'https://github.com/cworld1/rust-learning' }]
+        name: '先见 AI',
+        description: '先见 AI, 有数有据的商业分析智能体, AI 智能咨询顾问。',
+        links: [{ type: 'site', href: 'https://www.xianjianai.com/' }]
       },
       {
-        name: 'CS 213 Learning',
-        description: 'Notes, code and experiences for Introduction to Computer Systems course',
-        links: [
-          {
-            type: 'github',
-            href: 'https://github.com/zhuozhiyongde/Introduction-To-Computer-System-2023Fall-PKU'
-          }
-        ]
-      }
-    ]}
-  />
-
-  <h2 id='others'>Others</h2>
-  <ProjectSection
-    project={[
-      {
-        name: 'CWorld',
-        description: "CWorld's Github",
-        links: [{ type: 'github', href: 'https://github.com/cworld1' }]
-      },
-      {
-        name: 'Arthals',
-        description: 'Arthals Github',
-        links: [{ type: 'github', href: 'https://github.com/zhuozhiyongde' }]
+        name: '洞见研报',
+        description: '依托海量的研究报告，提供便捷、全面、实时、专业的信息检索服务。',
+        links: [{ type: 'site', href: 'https://www.djyanbao.com/index' }]
       }
     ]}
   />

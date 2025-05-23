@@ -11,9 +11,9 @@ import SkillLayout from '@/components/home/SkillLayout.astro'
 import avatar from '@/assets/avatar.png'
 import config from '@/site-config'
 
-const languages = ['Html', 'JavaScript', 'CSS', 'Shell']
-const frontend = ['TypeScript', 'Vite', 'Webpack', 'Astro']
-const backend = ['Vercel', 'Waline']
+const languages = ['Python', 'TypeScript']
+const backend = ['NestJS', 'Scrapy', 'PostgreSQL', 'MongoDB', 'Redis']
+const devTools = ['Git', 'Linux/WSL', 'VS Code/Cursor']
 
 const MAX_POSTS = 10
 const allPosts = await getBlogCollection()
@@ -36,31 +36,25 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
           <Label title='Shanghai, China'>
             <Icon name='location' class='size-5' slot='icon' />
           </Label>
-          <Label
-            title='fuhan666'
-            as='a'
-            href='https://github.com/fuhan666'
-            target='_blank'
-          >
+          <Label title='fuhan666' as='a' href='https://github.com/fuhan666' target='_blank'>
             <Icon name='github' class='size-5' slot='icon' />
+          </Label>
+          <Label title='fuhan666@outlook.com' target='_blank'>
+            <Icon name='email' class='size-5' slot='icon' />
           </Label>
         </div>
       </div>
     </section>
 
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
-      <Section title='About'>
-        <p class='text-muted-foreground'>Developer / Designer</p>
-        <p class='text-muted-foreground'>
-          Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione
-          indoctum dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel,
-          at eum oratio possit voluptatum.
-        </p>
-        <Button title='More about me' class='w-fit self-end' href='/about' style='ahead' />
+      <Section title='关于我'>
+        <p class='text-muted-foreground'>喜欢折腾，喜欢研究新东西，喜欢玩游戏，也喜欢写代码。</p>
+        <p class='text-muted-foreground'>Hi，你好。</p>
+        <Button title='我最近在找工作' class='w-fit self-end' href='/about' style='ahead' />
       </Section>
       {
         allPostsByDate.length > 0 && (
-          <Section title='Posts'>
+          <Section title='文章'>
             <ul class='flex flex-col gap-y-1.5 sm:gap-y-2'>
               {allPostsByDate.map((p) => (
                 <li class='flex flex-col gap-x-2 sm:flex-row'>
@@ -68,61 +62,141 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
                 </li>
               ))}
             </ul>
-            <Button title='More posts' class='w-fit self-end' href='/blog' style='ahead' />
+            <Button title='全部文章' class='w-fit self-end' href='/blog' style='ahead' />
           </Section>
         )
       }
 
       {
-        /* <Section title='Experience'>
-      <Card
-        heading='Lorem Ipsum'
-        subheading='Sit amet consectetur'
-        date='Dec 2022 - Nov 2023'
-        imagePath='/src/assets/about-astro.png'
-        altText='Lorem, ipsum dolor sit'
-        imageClass='h-12 w-auto md:-start-16'
-      >
-        <ul class='ms-4 list-disc text-muted-foreground'>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-            molestiae laboriosam pariatur!
-
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-          </li>
-        </ul>
-      </Card>
-      <Card
-        heading='Lorem Ipsum'
-        subheading='Sit amet consectetur'
-        date='Dec 2022 - Nov 2023'
-        imagePath='/src/assets/about-astro.png'
-        altText='Lorem, ipsum dolor sit'
-        imageClass='h-12 w-auto md:-start-16'
-      />
-    </Section> */
+        (
+          <Section title='工作经历'>
+            <Card heading='公司名称保密' subheading='后端开发工程师' date='2021年4月 - 至今'>
+              <ul class='ms-4 list-disc text-muted-foreground'>
+                <li>
+                  参与多个基于 NestJS 框架的后端服务的开发与维护，负责 API
+                  设计、业务逻辑实现和性能优化。
+                </li>
+                <li>
+                  负责多个基于 PHP Laravel 框架的后端服务的开发与维护，涵盖功能迭代、bug
+                  修复和代码重构。
+                </li>
+                <li>
+                  负责使用 Python Scrapy
+                  框架设计、开发和维护多个网络爬虫项目，用于大规模数据采集，为公司业务提供数据支撑。利用
+                  Crawlab
+                  对爬虫进行管理、部署和定时任务等。完成爬虫数据的后续处理，包括数据清洗、格式转换，并存储到
+                  MongoDB。累计编写爬虫脚本超300个。
+                </li>
+                <li>
+                  紧密关注 AI 新模型发布、排名及行业动态，积极探索并实践 AI 技术在实际工作中的应用。
+                </li>
+                <li>
+                  编写和优化 AI prompt，运用 Dify、Coze 等平台进行工作流编排，对接 OpenAI、DeepSeek
+                  等大模型 API。
+                </li>
+                <li>
+                  根据业务需求，快速编写和部署多个 Python、Go、VBA
+                  临时脚本，用于数据处理、任务自动化及系统辅助。
+                </li>
+                <li>
+                  负责实习生的入职培训和技术指导，帮助他们快速熟悉团队开发流程、技术栈和项目代码。
+                </li>
+              </ul>
+            </Card>
+          </Section>
+        )
       }
-      <Section title='Education'>
-        <Card
-          as='a'
-          heading='Lorem ipsum'
-          subheading='Lorem ipsum dolor sit amet, vidit suscipit at mei.'
-          date='August 2021 - July 2025'
-          href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        >
-          {
-            /* <ul class='ms-4 list-disc text-muted-foreground'>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-            molestiae laboriosam pariatur!
-          </li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-        </ul> */
-          }
+      {
+        (
+          <Section title='项目经历'>
+            <Card
+              as='a'
+              href='https://github.com/fuhan666/excel-cli'
+              heading='[ 开源 ] excel-cli'
+              subheading='技术栈：Ratatui + calamine + rust_xlsxwriter'
+              date='一个运行在终端中的轻量级 Excel 查看器，具有类 Vim 导航功能，用于查看、编辑 Excel 数据并导出为 JSON 格式。由 Rust 开发并已发布到 crates.io。'
+            >
+              <ul class='ms-4 list-disc text-muted-foreground'>
+                <li>超轻量化，构建后体积仅 3MB 左右，方便分发与使用。</li>
+                <li>
+                  利用 GitHub Actions 实现完整的 CI/CD
+                  流程，包括代码推送触发的自动构建与测试，以及版本发布的自动化处理。
+                </li>
+                <li>
+                  使用 Git 管理代码版本，遵循约定式提交 (Conventional Commits)、语义化版本管理
+                  (Semantic Versioning)、Keep a Changelog 规范。
+                </li>
+              </ul>
+            </Card>
+            <Card
+              as='a'
+              href='https://github.com/fuhan666/maimemo-sdk'
+              heading='[ 开源 ] maimemo-sdk'
+              subheading='技术栈：TypeScript'
+              date='墨墨背单词开放 API 的非官方 SDK，支持所有墨墨开放 API 功能。已发布为 npm 包。'
+            >
+              <ul class='ms-4 list-disc text-muted-foreground'>
+                <li>在官方 API 的基础上，添加了完整的类型提示和补全。</li>
+                <li>通过全面测试发现并在文档中详细标注了官方 API 实际响应与文档描述的差异之处。</li>
+              </ul>
+            </Card>
+            <Card
+              as='a'
+              href='https://github.com/fuhan666/cookie-to-json-plugin'
+              heading='[ 开源 ] cookie-to-json-plugin'
+              subheading='技术栈：React + uTools API'
+              date='一款为 uTools 平台开发的 Cookie 字符串转换插件，它能够快速将 Cookie 字符串转换成 JSON 格式，方便开发人员进行 API 调试和数据分析。'
+            >
+              <ul class='ms-4 list-disc text-muted-foreground'>
+                <li>
+                  字符串转JSON：将标准 Cookie 字符串快速转换为结构化的 JSON 对象，或智能识别并解析
+                  curl 中的 Cookies。
+                </li>
+                <li>历史记录管理：支持针对转换记录的增删改查；支持对历史记录进行命名。</li>
+                <li>
+                  用户友好功能：一键复制转换结果、JSON 语法高亮显示、支持系统深色/浅色主题自动切换。
+                </li>
+              </ul>
+            </Card>
+            <Card
+              as='a'
+              href='https://github.com/fuhan666/cookie-to-json-plugin'
+              heading='[ 开源 ] Quizy'
+              subheading='技术栈：NestJS + Prisma + PostgreSQL + MongoDB + Redis'
+              date='一个基于 NestJS 框架开发的智能试题生成与管理系统，集成了AI技术，能够根据 PDF 文档自动生成考试题目。'
+            >
+              <ul class='ms-4 list-disc text-muted-foreground'>
+                <li>
+                  RESTful
+                  API。包含用户管理、问题库、试卷组织、答题卡评分、文件管理和AI生成六大模块。
+                </li>
+                <li>
+                  使用 Prisma 操作 PostgreSQL 数据库；MongoDB
+                  存储非关系型数据；实现Redis缓存机制优化查询性能。
+                </li>
+                <li>
+                  JWT + Passport 多策略认证；全局 Guards
+                  权限控制；可选的数据验证和返回值格式化中间件；自定义 ExceptionFilter
+                  统一异常处理。
+                </li>
+                <li>
+                  封装 Dify API 服务，实现异步流式处理；结合 Cloudflare R2 实现大文件存储与处理。
+                </li>
+                <li>基于 Pino 实现的可拓展日志系统；利用 Husky + lint-staged 实现代码质量控制。</li>
+              </ul>
+            </Card>
+          </Section>
+        )
+      }
+      <Section title='教育经历'>
+        <Card heading='学校名称保密' subheading='信息管理与信息系统' date='2015年9月 - 2019年6月'>
+          <p class='text-muted-foreground'>
+            相关课程：统计学原理、C语言课程设计、电子商务网站规划与实践、数据结构、数据库技术及应用。
+          </p>
         </Card>
       </Section>
 
-      <Section title='Certifications'>
+      <!-- <Section title='Certifications'>
         <Card
           as='a'
           heading='Lorem ipsum'
@@ -130,12 +204,12 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
           date='July 2024'
           href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
         />
-      </Section>
+      </Section> -->
 
-      <Section title='Skills'>
-        <SkillLayout title='Languages' skills={languages} />
-        <SkillLayout title='Frontend' skills={frontend} />
-        <SkillLayout title='Backend' skills={backend} />
+      <Section title='技能'>
+        <SkillLayout title='语言' skills={languages} />
+        <SkillLayout title='框架/数据库' skills={backend} />
+        <SkillLayout title='开发工具' skills={devTools} />
       </Section>
     </div>
     <Quote class='mt-12' />
