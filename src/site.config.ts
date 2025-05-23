@@ -57,7 +57,11 @@ export const theme: ThemeUserConfig = {
   /** Configure the footer of your site. */
   footer: {
     /** Optional details about the social media accounts for this site. */
-    social: { github: 'https://github.com/fuhan666' }
+    social: { github: 'https://github.com/fuhan666' },
+    registration: {
+      url: '',
+      text: ''
+    }
   },
 
   content: {
