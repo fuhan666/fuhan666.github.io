@@ -53,10 +53,10 @@ export default defineConfig({
     // mdx(),
     UnoCSS({ injectReset: true }),
     AstroPureIntegration(config),
-    // (await import('@playform/compress')).default({
-    //   SVG: false,
-    //   Exclude: ['index.*.js']
-    // }),
+    (await import('@playform/compress')).default({
+      SVG: false,
+      Exclude: ['index.*.js']
+    }),
   ],
   // root: './my-project-directory',
 
