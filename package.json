@@ -20,7 +20,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/rss": "^4.0.11",
-    "@astrojs/vercel": "^8.0.3",
+    "@astrojs/vercel": "^8.1.4",
     "@playform/compress": "^0.1.7",
     "@unocss/reset": "^65.4.3",
     "@waline/client": "^3.5.1",
