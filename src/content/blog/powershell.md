@@ -7,7 +7,6 @@ tags:
 language: 'Chinese'
 ---
 
-
 ## Starship
 
 https://starship.rs/zh-CN/presets/#bracketed-segments

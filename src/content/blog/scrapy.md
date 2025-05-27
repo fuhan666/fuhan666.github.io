@@ -8,7 +8,6 @@ tags:
 language: 'Chinese'
 ---
 
-
 ## 每个爬虫文件指定pipelines的方法
 
 爬虫文件里写的方法会直接覆盖`settings.py`里的`pipelines`写的顺序
@@ -17,7 +16,7 @@ language: 'Chinese'
 class WinBidSpider(scrapy.spiders.Spider):
     name = "winbidVtj"
     allow_domains = ["tjconstruct.cn"]
-    start_urls = ['http://www.tjconstruct.cn/Zbgs'] 
+    start_urls = ['http://www.tjconstruct.cn/Zbgs']
     custom_settings = {
         'ITEM_PIPELINES': {
             'djyanbao.a36kr_projects_pipelines.SpiderPipeline': 300

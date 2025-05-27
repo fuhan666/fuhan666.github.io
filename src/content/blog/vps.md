@@ -8,7 +8,6 @@ tags:
 language: 'Chinese'
 ---
 
-
 ## 安装 3x-ui 面板
 
 ​[`https://github.com/MHSanaei/3x-ui`](https://github.com/MHSanaei/3x-ui)​

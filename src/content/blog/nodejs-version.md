@@ -7,10 +7,10 @@ tags:
 language: 'Chinese'
 ---
 
-
 ## 自动切换版本
 
 ### fnm
+
 https://github.com/Schniz/fnm
 
 在项目目录内添加`.nvmrc`​文件或`.node-version`​文件，并在文件中指定Node.js版本
@@ -22,6 +22,7 @@ v22.13.1
 当cd进入该目录后，fnm会自动切换Node.js版本。但离开该目录时，不会切换会原来的版本。
 
 ### pnpm
+
 https://pnpm.io/cli/env
 
 在项目目录内添加`.npmrc`​文件，并在文件中指定Node.js版本

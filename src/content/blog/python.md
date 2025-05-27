@@ -8,7 +8,6 @@ tags:
 language: 'Chinese'
 ---
 
-
 ## 去除列表中重复的字典
 
 ```python
@@ -110,13 +109,15 @@ pip config set global.index-url http://pypi.douban.com/simple
 ```
 
 ## 开启代理后使用pip安装包时出现SOCKS问题
+
 报错如下：
+
 ```bash
 [InvalidSchema]: Missing dependencies for SOCKS support.
 ```
 
 > 这种情况可以参考
-> 
+>
 > https://stackoverflow.com/questions/38794015/pythons-requests-missing-dependencies-for-socks-support-when-using-socks5-fro
 
 第一种解决方法：
@@ -124,12 +125,13 @@ pip config set global.index-url http://pypi.douban.com/simple
 
 第二种解决方法：
 `echo $all_proxy`查看当前的`all_proxy`（此命令适用于bash/zsh等shell），然后看如下解答：
->I changed my environment variable `all_proxy` (which was originally set to a SOCK proxy `socks://....`) to the https version in my .bashrc file:
+
+> I changed my environment variable `all_proxy` (which was originally set to a SOCK proxy `socks://....`) to the https version in my .bashrc file:
 >
->`export all_proxy="https://<proxy>:<port>/"`
+> `export all_proxy="https://<proxy>:<port>/"`
 
 ## 新建项目
+
 使用 uv 管理虚拟环境
 
 使用 ruff 来格式化代码
-
