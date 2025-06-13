@@ -5,7 +5,7 @@ description: 'WSL2 Docker Desktop 发行版部署失败问题'
 tags:
   - WSL
   - linux
-  - DockerDocker
+  - Docker
 language: 'Chinese'
 ---
 
